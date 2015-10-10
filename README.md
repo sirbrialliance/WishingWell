@@ -20,3 +20,5 @@ Spacescape
 materials/spacescape
 
 
+TODO:
+set up wish collision to only do stuff if trigger collider is player
