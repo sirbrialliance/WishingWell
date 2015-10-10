@@ -4,10 +4,8 @@
       _Cube ("Environment Map", Cube) = "" {}
    }
    SubShader {
-      Tags { "Queue" = "Background" }
       
       Pass {   
-         ZWrite Off
          Cull Front
 
          CGPROGRAM
