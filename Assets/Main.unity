@@ -235,7 +235,8 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6543070, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &496505797
@@ -557,7 +558,8 @@ Prefab:
       propertyPath: type
       value: Nostalgia
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6543070, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &960220483
@@ -611,7 +613,8 @@ Prefab:
       propertyPath: type
       value: Happy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6543070, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1215657010
@@ -677,7 +680,8 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6543070, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1279710452
@@ -744,7 +748,8 @@ Prefab:
       value: 
       objectReference: {fileID: 11433462, guid: 6bf6ee63f757b564687fb6e269238f3e,
         type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6543070, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1566698376
@@ -790,7 +795,8 @@ Prefab:
       propertyPath: m_Name
       value: RevengeWell
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6543070, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0f630b4dabd8675418be9f14dd25617a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1575011231

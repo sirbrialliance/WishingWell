@@ -15,13 +15,38 @@ public class PlayerController : MonoBehaviour {
 	private new Camera camera;
 	private new Rigidbody rigidbody;
 
+	private Vector3 lastPosition;
+
 	// Use this for initialization
 	protected void Start() {
 		camera = GetComponentInChildren<Camera>();
 		rigidbody = GetComponent<Rigidbody>();
-
+		lastPosition = transform.position;
 	}
 	
+	void Update()
+	{
+		Vector3 p = transform.position;
+		Vector3 movedVec = p - lastPosition;
+		if( movedVec.magnitude > 500 )
+		{
+			// we teleported, find new realm/universe
+			// get all Universes in the scene
+			Universe[] universes = Object.FindObjectsOfType<Universe>();
+			foreach( Universe u in universes )
+			{
+				GameObject ugo = u.gameObject;
+				Vector3 up = ugo.transform.position;
+				if( p.x >= up.x - 500 && p.x <= up.x + 500 && 
+					p.z >= up.z - 500 && p.z <= up.z + 500 )
+				{
+					enteredRealm(u);
+					break;
+				}
+			}
+		}
+		lastPosition = p;
+	}
 	
 	protected void FixedUpdate() {
 		var moveVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Input.GetAxis("Vertical"));
@@ -46,7 +71,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (heldWish != null)
 		{
-			Object.Destroy(heldWish);
+			heldWish.enabled = true;
 		}
 
 		heldWish = newWish;
@@ -66,7 +91,7 @@ public class PlayerController : MonoBehaviour {
 				wishesGranted++;
 				if (wishesGranted == 2)
 				{
-					preventFinalWish = true;
+					preventFinalWish = false;
 				}
 			}
 			else
@@ -77,7 +102,7 @@ public class PlayerController : MonoBehaviour {
 					this.enabled = false;
 				}
 			}
-			Object.Destroy(heldWish);
+			heldWish.enabled = true;
 			heldWish = null;
 		}
 	}
