@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using ui
+
 
 public class Wish : MonoBehaviour {
 
