@@ -4,8 +4,10 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	private Wish heldWish = null;
+	private int wishesGranted = 0;
 
 	public UnityEngine.UI.Text secretsTextUI;
+	public static bool preventFinalWish = true;
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +46,24 @@ public class PlayerController : MonoBehaviour {
 		if( heldWish != null && u.type == heldWish.type )
 		{
 			secretsTextUI.text = "You have granted the wish by bringing it to the correct realm!";
+			if (wishesGranted < 2)
+			{
+				wishesGranted++;
+				if (wishesGranted == 2)
+				{
+					preventFinalWish = true;
+				}
+			}
+			else
+			{
+				if( heldWish.secretText == Wish.winWish )
+				{
+					secretsTextUI.text = "You have finally granted your lover's wish and now you will be together forever. You win!";
+					this.enabled = false;
+				}
+			}
+			Object.Destroy(heldWish);
+			heldWish = null;
 		}
 	}
 }
