@@ -900,6 +900,10 @@ Prefab:
       propertyPath: m_Drag
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11417390, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
+      propertyPath: realmTextUI
+      value: 
+      objectReference: {fileID: 496505799}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
   m_IsPrefabParent: 0
