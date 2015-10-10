@@ -83,11 +83,11 @@ public class Wish : MonoBehaviour {
 		"I wish I were better with people!",
 		"I want to go to space!"
 	};
-	private static string[] loveWishes =
+	private static string[] loveWishes = // must be two or more, final wish is end game wish
 	{
 		"I wish my parents were together again.",
 		"I wish to meet someone tall, dark, handsome...someone who loves me!",
-		"I wish for us to be Together Forever!"
+		"I wish for us to be Together Forever! (This seems familiar somehow... Could it be?)"
 	};
 	public static string winWish = loveWishes[loveWishes.Length-1];
 	public string secretText;
@@ -98,7 +98,12 @@ public class Wish : MonoBehaviour {
 		int realm = Random.Range(0, (int)Realms.LENGTH);
 		type = realmNames[realm];
 		string[] realmWishlist = realmWishes[realm];
-		secretText = realmWishlist[Random.Range(0, realmWishlist.Length)];
+		int wishIdx = Random.Range(0, realmWishlist.Length);
+		if( PlayerController.preventFinalWish && realmWishlist == loveWishes && wishIdx == loveWishes.Length-1 )
+		{
+			wishIdx--;
+		}
+		secretText = realmWishlist[wishIdx];
 	}
 	
 	// Update is called once per frame
