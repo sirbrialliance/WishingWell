@@ -380,7 +380,7 @@ MonoBehaviour:
   portalSpeed: 50
   speedVariance: 4
   wishFrequency: 3
-  portalFrequency: 5
+  portalFrequency: 6
 --- !u!114 &11481106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -421,7 +421,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 30
+      scalar: 6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -454,7 +454,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 9
+      scalar: 150
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -648,7 +648,7 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 10000
+    maxNumParticles: 1000
   ShapeModule:
     serializedVersion: 2
     enabled: 1
@@ -658,7 +658,7 @@ ParticleSystem:
     length: 5
     boxX: 500
     boxY: 500
-    boxZ: 500
+    boxZ: 100
     arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
@@ -667,7 +667,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 100
+      scalar: 200
       maxCurve:
         serializedVersion: 2
         m_Curve:
