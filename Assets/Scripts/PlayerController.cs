@@ -45,6 +45,12 @@ public class PlayerController : MonoBehaviour {
 				}
 			}
 		}
+		
+		if( heldWish != null )
+		{
+			heldWish.transform.position = p;
+		}
+
 		lastPosition = p;
 	}
 	
@@ -98,7 +104,7 @@ public class PlayerController : MonoBehaviour {
 			{
 				if( heldWish.secretText == Wish.winWish )
 				{
-					secretsTextUI.text = "You have finally granted your lover's wish and now you will be together forever. You win!";
+					secretsTextUI.text = "You have granted your lover's wish. You win!";
 					this.enabled = false;
 				}
 			}

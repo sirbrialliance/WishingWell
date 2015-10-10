@@ -87,7 +87,7 @@ public class Wish : MonoBehaviour {
 	{
 		"I wish my parents were together again.",
 		"I wish to meet someone tall, dark, handsome...someone who loves me!",
-		"I wish for us to be Together Forever! (This seems familiar somehow... Could it be?)"
+		"I wish for us to be Together Forever! (This seems familiar somehow...)"
 	};
 	public static string winWish = loveWishes[loveWishes.Length-1];
 	public string secretText;
