@@ -6,6 +6,12 @@ public class PlayerController : MonoBehaviour {
 	private Wish heldWish = null;
 	private int wishesGranted = 0;
 
+	public AudioSource wishGrabSound;
+	public AudioSource successfulWishDropSound;
+
+	public AudioSource currentWellMusic;
+	public AudioSource gameEndMusic;
+
 	public UnityEngine.UI.Text realmTextUI;
 	public UnityEngine.UI.Text secretsTextUI;
 	public static bool preventFinalWish = true;
@@ -15,6 +21,8 @@ public class PlayerController : MonoBehaviour {
 	private new Camera camera;
 	private new Rigidbody rigidbody;
 
+	private bool gameEnded = false;
+
 	private Vector3 lastPosition;
 
 	// Use this for initialization
@@ -22,6 +30,7 @@ public class PlayerController : MonoBehaviour {
 		camera = GetComponentInChildren<Camera>();
 		rigidbody = GetComponent<Rigidbody>();
 		lastPosition = transform.position;
+		currentWellMusic.Play();
 	}
 	
 	void Update()
@@ -75,7 +84,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider otherCollider)
 	{
-		if (!this.enabled)
+		if (gameEnded)
 			return;
 		//Debug.Log("OnTriggerEnter " + otherCollider.name);
 		if( otherCollider.name == "Wish(Clone)" )
@@ -93,6 +102,7 @@ public class PlayerController : MonoBehaviour {
 
 		heldWish = newWish;
 
+		wishGrabSound.Play();
 		secretsTextUI.text = newWish.secretText;
 		newWish.enabled = false;
 	}
@@ -103,6 +113,7 @@ public class PlayerController : MonoBehaviour {
 		if( heldWish != null && u.type == heldWish.type )
 		{
 			secretsTextUI.text = "You have granted the wish by bringing it to the correct realm!";
+			successfulWishDropSound.Play();
 			if (wishesGranted < 2)
 			{
 				wishesGranted++;
@@ -117,10 +128,38 @@ public class PlayerController : MonoBehaviour {
 				{
 					secretsTextUI.text = "You have granted your lover's wish. You win!";
 					this.enabled = false;
+					gameEnded = true;
+					currentWellMusic.Stop();
+					gameEndMusic.Play();
 				}
 			}
 			heldWish.enabled = true;
 			heldWish = null;
 		}
+
+		if(!gameEnded)
+		{
+			StartCoroutine("ChangeMusic", u.wellMusic);
+		}
+	}
+
+	private IEnumerator ChangeMusic(AudioSource newWellMusic)
+	{
+		float fadeTimePassed = 0;
+		newWellMusic.volume = 0;
+		newWellMusic.Play();
+
+		while (!(Mathf.Approximately(fadeTimePassed, 1)))
+		{
+			fadeTimePassed = Mathf.Clamp01(fadeTimePassed + Time.deltaTime);
+			currentWellMusic.volume = 1 - fadeTimePassed;
+			newWellMusic.volume = fadeTimePassed;
+			yield return new WaitForSeconds(0.02f);
+		}
+
+		newWellMusic.volume = 1;
+		currentWellMusic.Stop();
+		currentWellMusic = newWellMusic;
+		StopCoroutine("ChangeMusic");
 	}
 }

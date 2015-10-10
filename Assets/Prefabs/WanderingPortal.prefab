@@ -531,7 +531,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 70
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -542,28 +542,23 @@ AudioSource:
     m_Curve:
     - time: .0199999996
       value: 1
-      inSlope: -8.79201603
-      outSlope: -8.79201603
+      inSlope: -.537162125
+      outSlope: -.537162125
       tangentMode: 0
-    - time: .111111112
-      value: .617857158
-      inSlope: -2.82589316
-      outSlope: -2.82589316
+    - time: .275555581
+      value: .827380955
+      inSlope: -1.0932945
+      outSlope: -1.0932945
       tangentMode: 0
-    - time: .328888893
-      value: .258928597
-      inSlope: -.813873649
-      outSlope: -.813873649
+    - time: .631111085
+      value: .266964346
+      inSlope: -1.02287948
+      outSlope: -1.02287948
       tangentMode: 0
-    - time: .644444406
-      value: .129464298
-      inSlope: -.0488475785
-      outSlope: -.0488475785
-      tangentMode: 0
-    - time: 1
+    - time: .99555558
       value: 0
-      inSlope: -.383035779
-      outSlope: -.383035779
+      inSlope: -.241071403
+      outSlope: -.241071403
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -750,7 +745,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_audioClip
@@ -762,7 +757,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MaxDistance
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
@@ -782,27 +777,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
-      value: -8.79201603
+      value: -.537162125
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outSlope
-      value: -8.79201603
+      value: -.537162125
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
-      value: .111111112
+      value: .275555581
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
-      value: .617857158
+      value: .827380955
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
-      value: -2.82589316
+      value: -1.0932945
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
-      value: -2.82589316
+      value: -1.0932945
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[6].value
@@ -818,35 +813,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].time
-      value: .328888893
+      value: .631111085
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].value
-      value: .258928597
+      value: .266964346
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inSlope
-      value: -.813873649
+      value: -1.02287948
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outSlope
-      value: -.813873649
+      value: -1.02287948
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].time
-      value: .644444406
+      value: .99555558
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].value
-      value: .129464298
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].inSlope
-      value: -.0488475785
+      value: -.241071403
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].outSlope
-      value: -.0488475785
+      value: -.241071403
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].time
@@ -858,11 +853,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].inSlope
-      value: -.383035779
+      value: -.736607075
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].outSlope
-      value: -.383035779
+      value: -.736607075
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[5].time
