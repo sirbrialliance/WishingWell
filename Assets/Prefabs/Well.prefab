@@ -181,11 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3c74e71669eba43b3a9ca1c0ccfec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 500, y: 500, z: 500}
+  size: {x: 100, y: 500, z: 100}
   wishTemplate: {fileID: 138234, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
   portalTemplate: {fileID: 169476, guid: 2da679942594ede4a86eed495fecb6bf, type: 2}
   wishFrequency: 3
-  portalFrequency: 300
+  portalFrequency: 3
 --- !u!114 &11481106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,7 +226,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 100
+      scalar: 30
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -259,7 +259,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 10
+      scalar: 9
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -472,7 +472,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 23.2999992
+      scalar: 100
       maxCurve:
         serializedVersion: 2
         m_Curve:
