@@ -5,6 +5,6 @@ using System.Collections;
 public class StuffEraser : MonoBehaviour {
 
 	protected void OnTriggerEnter(Collider other) {
-		Object.Destroy(other.gameObject);
+		Object.Destroy(other.gameObject, .1f);
 	}
 }

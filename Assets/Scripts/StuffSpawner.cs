@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using ZenFulcrum.Portal;
@@ -36,18 +36,15 @@ public class StuffSpawner : MonoBehaviour {
 
 			var basePos = new Vector3(Random.Range(-size.x / 2f, size.x / 2f), -size.y / 2f, Random.Range(-size.z / 2f, size.z / 2f));
 		
-			var pObjA = GameObject.Instantiate(portalTemplate);
-			var pObjB = GameObject.Instantiate(portalTemplate);
+			var portalPair = GameObject.Instantiate(portalTemplate);
+			var pObjA = portalPair.transform.Find("PairA");
+			var pObjB = portalPair.transform.Find("PairB");
 
-			var pA = pObjA.GetComponentInChildren<Portal>();
-			var pB = pObjB.GetComponentInChildren<Portal>();
+			//var pA = pObjA.GetComponentInChildren<Portal>();
+			//var pB = pObjB.GetComponentInChildren<Portal>();
 
 			pObjA.transform.position = transform.position + basePos;
 			pObjB.transform.position = otherSideSpawner.transform.position + basePos;
-			pObjA.transform.Rotate(Vector3.right, 180);
-
-			pA.destination = pObjB.transform.Find("Exit");
-			pB.destination = pObjA.transform.Find("Exit");
 		}
 	}
 
