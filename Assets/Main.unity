@@ -457,56 +457,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
---- !u!1001 &792349564
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 456142, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 456142, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 456142, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 456142, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 456142, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 456142, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 456142, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 456142, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 138234, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-      propertyPath: m_Name
-      value: Wish
-      objectReference: {fileID: 0}
-    - target: {fileID: 138234, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &891561024
 Prefab:
   m_ObjectHideFlags: 0
@@ -902,9 +852,9 @@ Prefab:
       propertyPath: secretsTextUI
       value: 
       objectReference: {fileID: 769672132}
-    - target: {fileID: 5432206, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_Drag
-      value: 2
+    - target: {fileID: 2089648, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
+      propertyPath: far clip plane
+      value: 733.869995
       objectReference: {fileID: 0}
     - target: {fileID: 11417390, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
       propertyPath: realmTextUI
