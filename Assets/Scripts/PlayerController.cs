@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 	private Wish heldWish = null;
 	private int wishesGranted = 0;
 
+	public UnityEngine.UI.Text realmTextUI;
 	public UnityEngine.UI.Text secretsTextUI;
 	public static bool preventFinalWish = true;
 
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void enteredRealm(Universe u)
 	{
+		realmTextUI.text = "You have entered the " + u.type + " realm.";
 		if( heldWish != null && u.type == heldWish.type )
 		{
 			secretsTextUI.text = "You have granted the wish by bringing it to the correct realm!";
