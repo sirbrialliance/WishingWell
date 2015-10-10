@@ -20,11 +20,14 @@ public class Wish : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter ()
+    void OnTriggerEnter(Collider other)
     {
-        this.enabled = false;
-        Debug.Log("hit wish:" + this + " secretText:" + secretText);
-        secretsTextUI.text = secretText;
-        player.hitWish(this);
+        if (other.gameObject.name == "FPSController")
+        {
+            this.enabled = false;
+            Debug.Log("hit wish:" + this + " secretText:" + secretText);
+            secretsTextUI.text = secretText;
+            player.hitWish(this);
+        }
     }
 }
