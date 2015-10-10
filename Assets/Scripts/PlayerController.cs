@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed = 15;
 
+	private float missedPortalAudioBlockTimeStart;
+	private bool missedPortalAudioBlock = false;
+
 	private new Camera camera;
 	private new Rigidbody rigidbody;
 
@@ -55,13 +58,28 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 
-		// turn on any portal audio listeners that are now above us
-		AudioSource[] audioSources = Object.FindObjectsOfType<AudioSource>();
-		foreach( AudioSource audioSrc in audioSources )
+		bool checkMissedPortalAudio = true;
+		if (missedPortalAudioBlock)
 		{
-			if ( !audioSrc.enabled && audioSrc.gameObject.name == "PairA" )
-				if( audioSrc.gameObject.transform.position.y > 20 )
-					audioSrc.enabled = true;
+			if( Time.realtimeSinceStartup - missedPortalAudioBlockTimeStart > 2.0f )
+			{
+				missedPortalAudioBlock = false;
+			}
+			else
+			{
+				checkMissedPortalAudio = false;
+			}
+		}
+		if (checkMissedPortalAudio)
+		{
+			// turn on any portal audio listeners that are now above us
+			AudioSource[] audioSources = Object.FindObjectsOfType<AudioSource>();
+			foreach (AudioSource audioSrc in audioSources)
+			{
+				if (!audioSrc.enabled && audioSrc.gameObject.name == "PairA")
+					if (audioSrc.gameObject.transform.position.y > 20)
+						audioSrc.enabled = true;
+			}
 		}
 		
 		if( heldWish != null )
@@ -110,6 +128,8 @@ public class PlayerController : MonoBehaviour {
 	public void enteredRealm(Universe u)
 	{
 		realmTextUI.text = "You have entered the " + u.type + " realm.";
+		missedPortalAudioBlockTimeStart = Time.realtimeSinceStartup;
+		missedPortalAudioBlock = true;
 		if( heldWish != null && u.type == heldWish.type )
 		{
 			secretsTextUI.text = "You have granted the wish by bringing it to the correct realm!";
