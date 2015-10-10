@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using ZenFulcrum.Portal;
 
 
 [RequireComponent(typeof(Universe))]
@@ -12,23 +14,40 @@ public class StuffSpawner : MonoBehaviour {
 	public float wishFrequency = .2f;
 	public float portalFrequency = .2f;
 
-	public Collider destructionBlock;
 
 	protected void Start() {
 		StartCoroutine(PortalSpawnner());
 		StartCoroutine(WishSpawnner());
 	}
 
-	protected void Update() {
-		
-	}
-
 	private IEnumerator PortalSpawnner() {
+		var myUniverse = GetComponent<Universe>().type;
+		List<StuffSpawner> otherSpawners = new List<StuffSpawner>();
+		foreach (var spawner in FindObjectsOfType<StuffSpawner>()) {
+			if (spawner.GetComponent<Universe>().type == myUniverse) continue;
+
+			otherSpawners.Add(spawner);
+		}
+
 		while (true) {
 			yield return new WaitForSeconds(portalFrequency);
 
-			var pObj = GameObject.Instantiate(portalTemplate);
-			pObj.transform.position = new Vector3(Random.Range(-size.x, size.x), -size.y, Random.Range(-size.z, size.z));
+			var otherSideSpawner = otherSpawners[Random.Range(0, otherSpawners.Count)];
+
+			var basePos = new Vector3(Random.Range(-size.x / 2f, size.x / 2f), -size.y / 2f, Random.Range(-size.z / 2f, size.z / 2f));
+		
+			var pObjA = GameObject.Instantiate(portalTemplate);
+			var pObjB = GameObject.Instantiate(portalTemplate);
+
+			var pA = pObjA.GetComponent<Portal>();
+			var pB = pObjB.GetComponent<Portal>();
+
+			pA.destination = pB.transform.Find("Exit");
+			pB.destination = pA.transform.Find("Exit");
+
+			pObjA.transform.position = transform.position + basePos;
+			pObjB.transform.position = otherSideSpawner.transform.position + basePos;
+			pObjA.transform.Rotate(Vector3.right, 180);
 		}
 	}
 
@@ -37,7 +56,7 @@ public class StuffSpawner : MonoBehaviour {
 			yield return new WaitForSeconds(wishFrequency);
 
 			var pObj = GameObject.Instantiate(wishTemplate);
-			pObj.transform.position = new Vector3(Random.Range(-size.x, size.x), -size.y, Random.Range(-size.z, size.z));
+			pObj.transform.position = transform.position + new Vector3(Random.Range(-size.x / 2f, size.x / 2f), -size.y / 2f, Random.Range(-size.z / 2f, size.z / 2f));
 		}
 	}
 }
