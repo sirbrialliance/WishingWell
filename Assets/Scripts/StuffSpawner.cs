@@ -39,15 +39,15 @@ public class StuffSpawner : MonoBehaviour {
 			var pObjA = GameObject.Instantiate(portalTemplate);
 			var pObjB = GameObject.Instantiate(portalTemplate);
 
-			var pA = pObjA.GetComponent<Portal>();
-			var pB = pObjB.GetComponent<Portal>();
-
-			pA.destination = pB.transform.Find("Exit");
-			pB.destination = pA.transform.Find("Exit");
+			var pA = pObjA.GetComponentInChildren<Portal>();
+			var pB = pObjB.GetComponentInChildren<Portal>();
 
 			pObjA.transform.position = transform.position + basePos;
 			pObjB.transform.position = otherSideSpawner.transform.position + basePos;
 			pObjA.transform.Rotate(Vector3.right, 180);
+
+			pA.destination = pObjB.transform.Find("Exit");
+			pB.destination = pObjA.transform.Find("Exit");
 		}
 	}
 

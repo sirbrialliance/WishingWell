@@ -178,7 +178,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 65d79a18a7e5afc4cb6a765ce66b3249, type: 3}
 --- !u!64 &6483004
 MeshCollider:
@@ -208,8 +208,8 @@ MonoBehaviour:
     teleportOnTouch: 1
     teleportOffset: {x: 0, y: 0, z: 0}
   renderOptions:
-    maximumPortalDepth: 2
-    textureSize: -100
+    maximumPortalDepth: 1
+    textureSize: -50
     useOblique: 1
     clipPlaneOffset: -.00999999978
     renderLayers:
