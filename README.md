@@ -13,8 +13,11 @@ Intro
 Main
   -the wells and portals, main falling action
 
-
-
+	
 Deps/related
-	Spaceboxes: http://alexcpeterson.com/spacescape/
+	Spaceboxes made with spacescape: http://alexcpeterson.com/spacescape/
 	ZFPortals folder contains a personal library asset from sirbrialliance and is not comitted in this repo
+
+
+materials/spacescape
+

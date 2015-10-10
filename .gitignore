@@ -7,3 +7,5 @@ Assets/ZFPortals/
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp-firstpass.csproj
 Assembly-CSharp.csproj
+
+/.vs
