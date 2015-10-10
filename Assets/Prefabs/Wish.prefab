@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2331240}
   - 54: {fileID: 5496764}
   - 114: {fileID: 11459880}
+  - 122: {fileID: 12259440}
   m_Layer: 0
   m_Name: Wish
   m_TagString: Untagged
@@ -39,8 +40,8 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138234}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
@@ -90,7 +91,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secretText: 
-  secretsTextUI: {fileID: 0}
+  type: 
+--- !u!122 &12259440
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138234}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 3531669503
+  m_Size: 20
 --- !u!135 &13597252
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -109,7 +121,23 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.rgba
+      value: 3531669503
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138234}
