@@ -5,7 +5,7 @@ public class FallController : MonoBehaviour {
 
     public int wellTop = 0;
     public int wellBottom = -5000;
-    public Rigidbody[] fallers;
+    public Transform[] fallers;
 
 	// Use this for initialization
 	void Start () {
@@ -14,11 +14,11 @@ public class FallController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    foreach( Rigidbody r in fallers )
+	    foreach( Transform t in fallers )
         {
-            if( r.position.y < wellBottom )
+            if( t.position.y < wellBottom )
             {
-                r.MovePosition(new Vector3(r.position.x, wellTop, r.position.z));
+                t.position = new Vector3(t.position.x, wellTop, t.position.z);
             }
         }
 	}
