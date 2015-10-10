@@ -45,6 +45,15 @@ public class PlayerController : MonoBehaviour {
 				}
 			}
 		}
+
+		// turn on any portal audio listeners that are now above us
+		AudioSource[] audioSources = Object.FindObjectsOfType<AudioSource>();
+		foreach( AudioSource audioSrc in audioSources )
+		{
+			if ( !audioSrc.enabled && audioSrc.gameObject.name == "PairA" )
+				if( audioSrc.gameObject.transform.position.y > 20 )
+					audioSrc.enabled = true;
+		}
 		
 		if( heldWish != null )
 		{
