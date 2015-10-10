@@ -3,7 +3,9 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    private Wish heldWish;
+	private Wish heldWish = null;
+
+	public UnityEngine.UI.Text secretsTextUI;
 
 	// Use this for initialization
 	void Start () {
@@ -15,13 +17,33 @@ public class PlayerController : MonoBehaviour {
 	
 	}
 
-    public void hitWish(Wish newWish)
-    {
-        if( heldWish != null )
-        {
-            // put heldWish back in the world
-        }
+	public void OnTriggerEnter(Collider otherCollider)
+	{
+		Debug.Log("OnTriggerEnter " + otherCollider.name);
+		if( otherCollider.name == "Wish(Clone)" )
+		{
+			hitWish((Wish)otherCollider.gameObject.GetComponent("Wish"));
+		}
+	}
 
-        heldWish = newWish;
-    }
+	public void hitWish(Wish newWish)
+	{
+		if (heldWish != null)
+		{
+			Object.Destroy(heldWish);
+		}
+
+		heldWish = newWish;
+
+		secretsTextUI.text = newWish.secretText;
+		newWish.enabled = false;
+	}
+
+	public void enteredRealm(Universe u)
+	{
+		if( heldWish != null && u.type == heldWish.type )
+		{
+			secretsTextUI.text = "You have granted the wish by bringing it to the correct realm!";
+		}
+	}
 }
