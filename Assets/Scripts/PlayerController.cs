@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider otherCollider)
 	{
-		Debug.Log("OnTriggerEnter " + otherCollider.name);
+		//Debug.Log("OnTriggerEnter " + otherCollider.name);
 		if( otherCollider.name == "Wish(Clone)" )
 		{
 			hitWish((Wish)otherCollider.gameObject.GetComponent("Wish"));
