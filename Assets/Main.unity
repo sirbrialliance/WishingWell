@@ -116,7 +116,7 @@ RectTransform:
   - {fileID: 496505798}
   - {fileID: 769672134}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -455,7 +455,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!1001 &792349564
 Prefab:
   m_ObjectHideFlags: 0
@@ -853,53 +853,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1001 &1660996516
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 437542, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437542, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437542, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437542, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437542, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437542, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437542, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 437542, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11417390, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: secretsTextUI
-      value: 
-      objectReference: {fileID: 769672132}
-    - target: {fileID: 11454034, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_WalkSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-  m_IsPrefabParent: 0
