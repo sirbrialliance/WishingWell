@@ -31,6 +31,7 @@ GameObject:
   - 64: {fileID: 6466254}
   - 23: {fileID: 2358024}
   - 114: {fileID: 11401656}
+  - 114: {fileID: 11400700}
   m_Layer: 0
   m_Name: B-Front
   m_TagString: Untagged
@@ -69,6 +70,7 @@ GameObject:
   - 64: {fileID: 6455982}
   - 23: {fileID: 2326292}
   - 114: {fileID: 11433788}
+  - 114: {fileID: 11452716}
   m_Layer: 0
   m_Name: B-Back
   m_TagString: Untagged
@@ -88,6 +90,7 @@ GameObject:
   - 64: {fileID: 6432106}
   - 23: {fileID: 2345774}
   - 114: {fileID: 11488564}
+  - 114: {fileID: 11491538}
   m_Layer: 0
   m_Name: A-Front
   m_TagString: Untagged
@@ -107,6 +110,7 @@ GameObject:
   - 64: {fileID: 6412504}
   - 23: {fileID: 2360160}
   - 114: {fileID: 11444196}
+  - 114: {fileID: 11490896}
   m_Layer: 0
   m_Name: A-Back
   m_TagString: Untagged
@@ -507,6 +511,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300014, guid: bbb13a153757bb441833296c6e266eed, type: 3}
+--- !u!114 &11400700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5fca16233ee80438f18aa28b9636b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableHeight: 20
 --- !u!114 &11401656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -579,6 +595,18 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 4294967295
     fallbackColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &11452716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5fca16233ee80438f18aa28b9636b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableHeight: 20
 --- !u!114 &11488564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -603,6 +631,30 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 4294967295
     fallbackColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &11490896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5fca16233ee80438f18aa28b9636b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableHeight: 20
+--- !u!114 &11491538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5fca16233ee80438f18aa28b9636b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableHeight: 20
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider otherCollider)
 	{
+		if (!this.enabled)
+			return;
 		//Debug.Log("OnTriggerEnter " + otherCollider.name);
 		if( otherCollider.name == "Wish(Clone)" )
 		{
