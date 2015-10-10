@@ -13,12 +13,15 @@ Intro
 Main
   -the wells and portals, main falling action
 
+	
+Deps/related
+	Spaceboxes made with spacescape: http://alexcpeterson.com/spacescape/
+	ZFPortals folder contains a personal library asset from sirbrialliance and is not comitted in this repo
 
-
-Spacescape
 
 materials/spacescape
 
 
 TODO:
 set up wish collision to only do stuff if trigger collider is player
+

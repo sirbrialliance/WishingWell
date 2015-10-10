@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 485036}
   - 114: {fileID: 11484732}
+  - 114: {fileID: 11426624}
   m_Layer: 0
   m_Name: Well
   m_TagString: Untagged
@@ -28,6 +29,24 @@ GameObject:
   - 199: {fileID: 19911752}
   m_Layer: 0
   m_Name: Particle System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &144756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 475476}
+  - 33: {fileID: 3358946}
+  - 65: {fileID: 6596870}
+  - 114: {fileID: 11481106}
+  m_Layer: 0
+  m_Name: Eraser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,12 +75,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107980}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 485036}
   m_RootOrder: 1
+--- !u!4 &475476
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 278, z: 0}
+  m_LocalScale: {x: 500, y: 10, z: 500}
+  m_Children: []
+  m_Father: {fileID: 485036}
+  m_RootOrder: 2
 --- !u!4 &479504
 Transform:
   m_ObjectHideFlags: 1
@@ -86,6 +117,7 @@ Transform:
   m_Children:
   - {fileID: 479504}
   - {fileID: 434538}
+  - {fileID: 475476}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2339764
@@ -119,6 +151,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154242}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &3358946
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144756}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6596870
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11426624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3c74e71669eba43b3a9ca1c0ccfec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 500, y: 500, z: 500}
+  wishTemplate: {fileID: 138234, guid: ec577c26d0aecdb4fb9e056b77d73a36, type: 2}
+  portalTemplate: {fileID: 169476, guid: 2da679942594ede4a86eed495fecb6bf, type: 2}
+  wishFrequency: 3
+  portalFrequency: 300
+--- !u!114 &11481106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480d6e32c32185e42bfd55bdf3773aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11484732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c258c827207bc4daf0e47a731a4982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
+  type: Revenge
 --- !u!198 &19899782
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -181,7 +259,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 1
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -389,7 +467,7 @@ ParticleSystem:
     arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
-    randomDirection: 1
+    randomDirection: 0
   EmissionModule:
     enabled: 1
     m_Type: 0

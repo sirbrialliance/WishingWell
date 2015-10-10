@@ -1,0 +1,62 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using ZenFulcrum.Portal;
+
+
+[RequireComponent(typeof(Universe))]
+public class StuffSpawner : MonoBehaviour {
+	public Vector3 size = new Vector3(500, 500, 500);
+
+	public GameObject wishTemplate;
+	public GameObject portalTemplate;
+
+	public float wishFrequency = .2f;
+	public float portalFrequency = .2f;
+
+
+	protected void Start() {
+		StartCoroutine(PortalSpawnner());
+		StartCoroutine(WishSpawnner());
+	}
+
+	private IEnumerator PortalSpawnner() {
+		var myUniverse = GetComponent<Universe>().type;
+		List<StuffSpawner> otherSpawners = new List<StuffSpawner>();
+		foreach (var spawner in FindObjectsOfType<StuffSpawner>()) {
+			if (spawner.GetComponent<Universe>().type == myUniverse) continue;
+
+			otherSpawners.Add(spawner);
+		}
+
+		while (true) {
+			yield return new WaitForSeconds(portalFrequency);
+
+			var otherSideSpawner = otherSpawners[Random.Range(0, otherSpawners.Count)];
+
+			var basePos = new Vector3(Random.Range(-size.x / 2f, size.x / 2f), -size.y / 2f, Random.Range(-size.z / 2f, size.z / 2f));
+		
+			var pObjA = GameObject.Instantiate(portalTemplate);
+			var pObjB = GameObject.Instantiate(portalTemplate);
+
+			var pA = pObjA.GetComponent<Portal>();
+			var pB = pObjB.GetComponent<Portal>();
+
+			pA.destination = pB.transform.Find("Exit");
+			pB.destination = pA.transform.Find("Exit");
+
+			pObjA.transform.position = transform.position + basePos;
+			pObjB.transform.position = otherSideSpawner.transform.position + basePos;
+			pObjA.transform.Rotate(Vector3.right, 180);
+		}
+	}
+
+	private IEnumerator WishSpawnner() {
+		while (true) {
+			yield return new WaitForSeconds(wishFrequency);
+
+			var pObj = GameObject.Instantiate(wishTemplate);
+			pObj.transform.position = transform.position + new Vector3(Random.Range(-size.x / 2f, size.x / 2f), -size.y / 2f, Random.Range(-size.z / 2f, size.z / 2f));
+		}
+	}
+}

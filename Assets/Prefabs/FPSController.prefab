@@ -106,7 +106,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_RunstepLenghten: .699999988
   m_JumpSpeed: 10
   m_StickToGroundForce: 10
-  m_GravityMultiplier: 1.5
+  m_GravityMultiplier: 0
   m_MouseLook:
     XSensitivity: 2
     YSensitivity: 2
