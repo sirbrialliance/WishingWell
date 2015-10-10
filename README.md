@@ -24,3 +24,4 @@ Deps/related
 TODO:
 text at top to tell you what realm you're in
 collide with wish, take it to realm, show that you granted the wish
+wishes can spawn in their own realm- need to restrict that
