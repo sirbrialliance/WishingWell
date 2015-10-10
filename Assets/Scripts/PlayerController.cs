@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
@@ -9,14 +9,27 @@ public class PlayerController : MonoBehaviour {
 	public UnityEngine.UI.Text secretsTextUI;
 	public static bool preventFinalWish = true;
 
+	public float moveSpeed = 15;
+
+	private new Camera camera;
+	private new Rigidbody rigidbody;
+
 	// Use this for initialization
-	void Start () {
-	
+	protected void Start() {
+		camera = GetComponentInChildren<Camera>();
+		rigidbody = GetComponent<Rigidbody>();
+
 	}
 	
-	// Update is called once per frame
-	void Update () {
 	
+	protected void FixedUpdate() {
+		var moveVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Input.GetAxis("Vertical"));
+
+		moveVector = camera.transform.TransformVector(moveVector);
+		moveVector.y = 0;
+		moveVector = moveVector.normalized * moveSpeed * Time.fixedDeltaTime * 100;
+
+		rigidbody.AddForce(moveVector);
 	}
 
 	public void OnTriggerEnter(Collider otherCollider)

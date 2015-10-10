@@ -896,9 +896,9 @@ Prefab:
       propertyPath: secretsTextUI
       value: 
       objectReference: {fileID: 769672132}
-    - target: {fileID: 11454034, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
-      propertyPath: m_WalkSpeed
-      value: 15
+    - target: {fileID: 5432206, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
+      propertyPath: m_Drag
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa10394047cefdd45b26f70eb904193b, type: 2}
