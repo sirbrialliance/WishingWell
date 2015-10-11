@@ -22,6 +22,9 @@ Deps/related
 
 
 TODO:
-text at top to tell you what realm you're in
-collide with wish, take it to realm, show that you granted the wish
-wishes can spawn in their own realm- need to restrict that
+thinner video for web release
+click to continue text
+change MainMenu title text to add "The"
+add ending video - try to stop on last frame or if not take screenshot and show last frame on quad for final screen
+get music in
+add "proudly composed entirely within the weekend" to credits
