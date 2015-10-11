@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 
 	public AudioSource wishGrabSound;
 	public AudioSource successfulWishDropSound;
+	public AudioSource wrongWishDropSound;
 
 	public AudioSource currentWellMusic;
 	public AudioSource gameEndMusic;
@@ -180,6 +181,10 @@ public class PlayerController : MonoBehaviour {
 			}
 			heldWish.enabled = true;
 			heldWish = null;
+		}
+		else if( heldWish != null )
+		{
+			wrongWishDropSound.Play();
 		}
 
 		if(!gameEnded)
