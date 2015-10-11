@@ -133,7 +133,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wishing Well
+  m_Text: The Wishing Well
 --- !u!222 &283162856
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -154,8 +154,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -202, y: 151}
-  m_SizeDelta: {x: 352, y: 67}
+  m_AnchoredPosition: {x: -103, y: 151}
+  m_SizeDelta: {x: 444, y: 67}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &669435272
 GameObject:
@@ -188,7 +188,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -47.5999985}
+  m_AnchoredPosition: {x: 30.7999992, y: -47.5999985}
   m_SizeDelta: {x: 717, y: 290}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &669435274
@@ -226,12 +226,12 @@ MonoBehaviour:
     the girl falls in!\r\n\r\nAs the girl falls through the well, she approaches coins
     that have turned into wishes!  (Glowing spheres.)\r\n\r\nCan she find her lover's
     wish, and will it come true?\r\n\n<b> Press W to \"fall in love!\"\r </b>\n\r\r\nHints:
-    \ Use WASD to move and mouse to look around as you fall. Try carrying a wish into
-    a matching themed well to progress and find more wishes!\r You can let go of any
-    wish by picking up a new one!\n\nProducer: Jeb Merrill\nAudio Designer: Kenneth
-    Cobble\nCode: Jon Stephens, Josh Jones\n\nThis game was developed as part of Indie
-    Speed Run 2015 (www.indiespeedrun.com).\n\nThis game was created during Utah Indie
-    Game Jam 2015.\n"
+    \ Use WASD to move and mouse to look around as you fall. Try <b>carrying a wish
+    into a matching \nthemed well to progress</b> and find more wishes!\r You can
+    let go of any wish by picking up a new one!\n\nProducer: Jeb Merrill\nAudio: Kenneth
+    Cobble (Proudly composed all within the time limit!)\nCode: Jon Stephens, Josh
+    Jones\n\nThis game was developed as part of Indie Speed Run 2015 (www.indiespeedrun.com).\n\nThis
+    game was created during Utah Indie Game Jam 2015.\n"
 --- !u!222 &669435275
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -917,7 +917,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 106.400002, y: -151}
+  m_AnchoredPosition: {x: 137.399994, y: -151}
   m_SizeDelta: {x: 160, y: 17.7000008}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2014547004

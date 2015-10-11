@@ -22,7 +22,5 @@ Deps/related
 
 
 TODO:
-change MainMenu title text to add "The"
 add ending video - try to stop on last frame or if not take screenshot and show last frame on quad for final screen
 get music in
-add "proudly composed entirely within the weekend" to credits
