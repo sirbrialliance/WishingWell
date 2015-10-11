@@ -34,10 +34,18 @@ public class PlayerController : MonoBehaviour {
 		rigidbody = GetComponent<Rigidbody>();
 		lastPosition = transform.position;
 		currentWellMusic.Play();
+
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 	}
 	
 	void Update()
 	{
+		if( Input.GetKeyDown(KeyCode.Escape) )
+		{
+			Application.Quit();
+		}
+
 		Vector3 p = transform.position;
 		Vector3 movedVec = p - lastPosition;
 		if( movedVec.magnitude > 500 )

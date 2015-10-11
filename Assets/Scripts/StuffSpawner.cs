@@ -18,6 +18,7 @@ public class StuffSpawner : MonoBehaviour {
 	//hehe, I called these "frequency" but they are actually "period"....
 	public float wishFrequency = .2f;
 	public float portalFrequency = .2f;
+	public float portalVariance = 1;
 
 
 	protected void Start() {
@@ -35,7 +36,7 @@ public class StuffSpawner : MonoBehaviour {
 		}
 
 		while (true) {
-			yield return new WaitForSeconds(portalFrequency);
+			yield return new WaitForSeconds(portalFrequency+Random.Range(-portalVariance, portalVariance));
 
 			var otherSideSpawner = otherSpawners[Random.Range(0, otherSpawners.Count)];
 
@@ -57,10 +58,10 @@ public class StuffSpawner : MonoBehaviour {
 			//var pB = pObjB.GetComponentInChildren<Portal>();
 
 			pObjA.transform.position = transform.position + basePos;
-			//pObjA.transform.Rotate(Vector3.up, Random.Range(0, 360));
+			pObjA.transform.Rotate(Vector3.forward, Random.Range(0, 90));
 
 			pObjB.transform.position = otherSideSpawner.transform.position + basePos;
-			//pObjB.transform.Rotate(Vector3.up, Random.Range(0, 360));
+			pObjB.transform.Rotate(Vector3.forward, Random.Range(0, 90));
 		}
 	}
 
