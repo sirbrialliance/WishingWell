@@ -129,12 +129,12 @@ public class PlayerController : MonoBehaviour {
 
 	public void enteredRealm(Universe u)
 	{
-		realmTextUI.text = "You have entered the " + u.type + " realm.";
+		realmTextUI.text = "You have entered the " + u.type + " well.";
 		missedPortalAudioBlockTimeStart = Time.realtimeSinceStartup;
 		missedPortalAudioBlock = true;
 		if( heldWish != null && u.type == heldWish.type )
 		{
-			secretsTextUI.text = "You have granted the wish by bringing it to the correct realm!";
+			secretsTextUI.text = "You have granted the wish by bringing it to the correct well!";
 			successfulWishDropSound.Play();
 			if (wishesGranted < 2)
 			{
