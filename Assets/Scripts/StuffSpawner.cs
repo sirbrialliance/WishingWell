@@ -65,6 +65,7 @@ public class StuffSpawner : MonoBehaviour {
 	}
 
 	private IEnumerator WishSpawnner() {
+		string ownRealmName = GetComponent<Universe>().type;
 		while (true) {
 			yield return new WaitForSeconds(wishFrequency);
 
@@ -75,6 +76,7 @@ public class StuffSpawner : MonoBehaviour {
 				0
 			);
 			pObj.transform.position = transform.position + new Vector3(Random.Range(-size.x / 2f, size.x / 2f), -size.y / 2f, Random.Range(-size.z / 2f, size.z / 2f));
+			((Wish)pObj.GetComponent<Wish>()).setRealmSecret(ownRealmName);
 		}
 	}
 }

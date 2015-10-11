@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+using UnityEngine;
 
 public class Wish : MonoBehaviour {
 	public enum Realms
@@ -90,20 +89,41 @@ public class Wish : MonoBehaviour {
 		"I wish for us to be Together Forever! (This seems familiar somehow...)"
 	};
 	public static string winWish = loveWishes[loveWishes.Length-1];
+
 	public string secretText;
 	public string type;
 
 	// Use this for initialization
 	void Start () {
+	}
+
+	internal void setRealmSecret(string ownRealmName)
+	{
+		int ownRealm = System.Array.IndexOf(realmNames, ownRealmName);
 		int realm = Random.Range(0, (int)Realms.LENGTH);
+		// skip over our realm (no wish should spawn in its own realm)
+		if (realm == ownRealm)
+		{
+			int halfPoint = (int)Realms.LENGTH / 2;
+			if (realm > halfPoint)
+			{
+				--realm;
+			}
+			else
+			{
+				++realm;
+			}
+		}
+
 		type = realmNames[realm];
 		string[] realmWishlist = realmWishes[realm];
 		int wishIdx = Random.Range(0, realmWishlist.Length);
-		if( PlayerController.preventFinalWish && realmWishlist == loveWishes && wishIdx == loveWishes.Length-1 )
+		if (PlayerController.preventFinalWish && realmWishlist == loveWishes && wishIdx == loveWishes.Length - 1)
 		{
 			wishIdx--;
 		}
 		secretText = realmWishlist[wishIdx];
+
 	}
 	
 	// Update is called once per frame
