@@ -5,6 +5,7 @@ public class IntroMovieController : MonoBehaviour {
 
 	public Canvas menuCanvas;
 	public MeshRenderer menuClickText;
+	public Material whiteMaterial;
 
 	// Use this for initialization
 	void Start () {
@@ -39,10 +40,12 @@ public class IntroMovieController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if( Input.GetMouseButtonDown(0) )
+		if( !menuCanvas.gameObject.activeSelf && Input.GetMouseButtonDown(0) )
 		{
-			MovieTexture mt = ((MovieTexture)GetComponent<Renderer>().material.mainTexture);
+			Renderer r = GetComponent<Renderer>();
+			MovieTexture mt = (MovieTexture)r.material.mainTexture;
 			mt.Stop();
+			r.material = whiteMaterial;
 			menuClickText.gameObject.SetActive(false);
 			menuCanvas.gameObject.SetActive(true);
 		}
