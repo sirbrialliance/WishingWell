@@ -1,26 +1,24 @@
 # WishingWell
-2015 Game Jam
+Utah Indie Game Jam 2015
 
 
 Scenes
 
 MainMenu
-  -start game, credits, exit
-
-Intro
-  -show characters, coin falling, coin turning into wish
+  -plays intro movie and shows intro text and allows user to click and press a key to start
 
 Main
-  -the wells and portals, main falling action
+  -the wells and portals, main falling action, win and play end movie
 
-	
+
 Deps/related
-	materials/spacescape has Spaceboxes made with spacescape: http://alexcpeterson.com/spacescape/
-	ZFPortals folder contains a personal library asset from sirbrialliance and is not committed in this repo
+  materials/spacescape has Spaceboxes made with spacescape: http://alexcpeterson.com/spacescape/
+  ZFPortals folder contains a personal library asset from sirbrialliance and is not committed in this repo
 
 
 
 
 TODO:
-add ending video - try to stop on last frame or if not take screenshot and show last frame on quad for final screen
 get music in
+z 8.9
+y -8.19

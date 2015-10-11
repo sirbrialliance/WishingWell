@@ -23,7 +23,6 @@ public class IntroMovieController : MonoBehaviour {
 			MovieTexture mt = ((MovieTexture)GetComponent<Renderer>().material.mainTexture);
 			if(mt.isReadyToPlay)
 			{
-				Debug.Log("mainTexture:" + mt);
 				mt.Play();
 				break;
 			}
@@ -43,9 +42,7 @@ public class IntroMovieController : MonoBehaviour {
 		if( Input.GetMouseButtonDown(0) )
 		{
 			MovieTexture mt = ((MovieTexture)GetComponent<Renderer>().material.mainTexture);
-			Debug.Log("mt:" + mt);
 			mt.Stop();
-			menuCanvas.gameObject.SetActive(false);
 			menuClickText.gameObject.SetActive(false);
 			menuCanvas.gameObject.SetActive(true);
 		}

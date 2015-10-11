@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour {
 	public AudioSource currentWellMusic;
 	public AudioSource gameEndMusic;
 
+	public MovieTexture endMovie;
+	public MeshRenderer endMovieQuad;
+
 	public UnityEngine.UI.Text realmTextUI;
 	public UnityEngine.UI.Text secretsTextUI;
 	public static bool preventFinalWish = true;
@@ -30,6 +33,11 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	protected void Start() {
+		// hide the movie quad
+		endMovieQuad.gameObject.SetActive(false);
+		// REALLY hide it - workaround for portal teleport bug
+		endMovieQuad.transform.localPosition = new Vector3(0f, 8.19f, -8.9f);
+
 		camera = GetComponentInChildren<Camera>();
 		rigidbody = GetComponent<Rigidbody>();
 		lastPosition = transform.position;
@@ -112,7 +120,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (gameEnded)
 			return;
-		//Debug.Log("OnTriggerEnter " + otherCollider.name);
+
 		if( otherCollider.name == "Wish(Clone)" )
 		{
 			hitWish((Wish)otherCollider.gameObject.GetComponent("Wish"));
@@ -154,13 +162,20 @@ public class PlayerController : MonoBehaviour {
 			}
 			else
 			{
-				if( heldWish.secretText == Wish.winWish )
+				if( heldWish.secretText == Wish.winWish && !gameEnded )
 				{
 					secretsTextUI.text = "You have granted your lover's wish. You win!";
 					this.enabled = false;
 					gameEnded = true;
 					currentWellMusic.Stop();
 					gameEndMusic.Play();
+
+					// show the end movie quad
+					endMovieQuad.gameObject.SetActive(true);
+					// REALLY show it - workaround for portal teleport bug
+					endMovieQuad.transform.localPosition = new Vector3(0f, -8.19f, 8.9f);
+
+					StartCoroutine(waitLoadEndMovie());
 				}
 			}
 			heldWish.enabled = true;
@@ -170,6 +185,21 @@ public class PlayerController : MonoBehaviour {
 		if(!gameEnded)
 		{
 			StartCoroutine("ChangeMusic", u.wellMusic);
+		}
+	}
+
+	private IEnumerator waitLoadEndMovie()
+	{
+		// check every second to see if the end movie is ready to play yet
+		while (true)
+		{
+			yield return new WaitForSeconds(1);
+			
+			if (endMovie.isReadyToPlay)
+			{
+				endMovie.Play();
+				break;
+			}
 		}
 	}
 
