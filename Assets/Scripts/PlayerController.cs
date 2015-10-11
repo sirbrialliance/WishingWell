@@ -115,6 +115,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (heldWish != null)
 		{
+			if (heldWish == newWish)
+				return;
 			heldWish.enabled = true;
 		}
 
