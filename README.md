@@ -22,7 +22,6 @@ Deps/related
 
 
 TODO:
-thinner video for web release
 click to continue text
 change MainMenu title text to add "The"
 add ending video - try to stop on last frame or if not take screenshot and show last frame on quad for final screen
