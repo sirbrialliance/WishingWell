@@ -2,6 +2,9 @@
 Utah Indie Game Jam 2015
 
 
+http://vazor.itch.io/the-wishing-well
+
+
 Scenes
 
 MainMenu
@@ -15,10 +18,3 @@ Deps/related
   materials/spacescape has Spaceboxes made with spacescape: http://alexcpeterson.com/spacescape/
   ZFPortals folder contains a personal library asset from sirbrialliance and is not committed in this repo
 
-
-
-
-TODO:
-get music in
-z 8.9
-y -8.19
